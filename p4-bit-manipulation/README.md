@@ -44,7 +44,7 @@ After toggling every 5th room: 0100000000100011
 After turning ON lights for maintenance: 0100000010100011
 After turning OFF lights to save energy: 0100000010100011
 After applying alternate lighting pattern: 1110101000001001
-Final Step: Total number of lights ON = 7
+Total number of lights ON = 7
 ```
 
 Explanation:
