@@ -1,57 +1,78 @@
 ## Smart Lighting System Configuration
 
-You are designing a smart lighting system for a 16-room building. Each room's light can either be ON or OFF. The state of light in each room is represented by the bits of the integer,n. Given the number n and set of room numbers to perform the following operations and print state of the lights(in binary format) in each step.
+You are designing a smart lighting system for a 16-room building. Each room's light can either be ON or OFF. The state of light in each room is represented by the first 16 bits of an integer, $n$. Given the number n, perform the below tasks and print the state of the LED after each step.
 
-Task:
+Assume room number 1 correspond to the LSB and increases all the way to 16 which correspond to the MSB.
 
-1. Toggle the lights of every nth room of the building
-2. Turn on the lights of the given set of rooms
-3. Turn off the lights of the given set of rooms
-4. Apply an alternate lighting mask to simulate energy-saving lighting.
-5. Number of lights are on at the end of the process.
+**Tasks**
 
-Input Format:
+1. Toggle the lights of every $k$th room of the building from the left.
+2. Turn on the lights of the given set of rooms.
+3. Turn off the lights of the given set of rooms.
+4. Toggle the lights in the even room numbers.
+5. Find the number of lights are on at the end of the process.
+
+**Input Format**
+
 Input consists of four lines.
-1. First input consists of number n(decimal number),convert it to the binary value
-2. Second line of input consists of the number n, where every nth room has to be toggled(1<=n<=16)
-3. In the third line consists of the number represents the light of the room has to be turned on, which is terminated by -1.
-4. In the fourth line consists of the number represents the light of the room has to be turned off, which is terminated by -1.
+1. First input consists of number n (as decimal number), whose bits represents the initial lighting configuration.
+2. Second line of input consists of the number $k$, where every nth room has to be toggled(1<=k<=16)
+3. In the third line consists of the numbers that represent the room number for which the lights has to be turned on and is terminated by -1.
+4. In the fourth line consists of the numbers that represent the room number for which the lights has to be turned off and is terminated by -1.
 
-Output Format:
+**Output Format**
+
 Output consists of six lines
-1. 16 bit representation of the decimal number
-2. Print the 16 bit representation, after Toggling every nth light
-3. Print the 16 bit representation, after turning on the given set of lights
-4. Print the 16 bit representation, after turning off the given set of lights
-5. Print the 16 bit representation, after masking it
-6. Print the total number of lights are on at the end of the process.
+1. 16 bit representation of the decimal number.
+2. 16 bit representation, after toggling every nth light.
+3. 16 bit representation, after turning on the given set of lights.
+4. 16 bit representation, after turning off the given set of lights.
+5. 16 bit representation, after toggling lights in even room numbers.
+6. Total number of lights are on at the end of the process.
 
 
-Sample Input:
+**Sample Input**
 
 ```
 563
 5
-2 8 -1
+2 8 9 -1
 5 9 -1
 ```
 
-Sample Output:
+**Sample Output**
 
 ```
 0000001000110011
 After toggling every 5th room: 0100000000100011
-After turning ON lights for maintenance: 0100000010100011
-After turning OFF lights to save energy: 0100000010100011
-After applying alternate lighting pattern: 1110101000001001
+After turning ON the given lights: 0100000110100011
+After turning OFF the given lights: 0100000010100011
+After toggling lights in even rooms: 1110101000001001
 Total number of lights ON = 7
 ```
 
-Explanation:
+**Explanation**
 
-1. Input the initial state of the lights in decimal format and print it in binary.
-2. For every kth room (using the step k), toggle the lights using XOR (^=).
-3. Use OR (|=) to turn ON specific rooms based on user input.
-4. Use AND with NOT (&= ~) to turn OFF specific rooms.
-5. Use XOR (^=) with the mask 0xAAAA (binary: 1010101010101010) for the alternate lighting pattern.
-6. Count the number of 1s (set bits) in the final binary representation of lights.
+1. First line has the 16-bit binary representation of the bits.  
+   $563_{10}$ -> $1000110011_{2}$ -> $0000001000110011$ (as 16 bit)
+2. After toggling every 5th room.  
+   ```
+   0000 0010 0011 0011
+   0100 0000 0010 0011
+   ```
+3. After turning ON lights in room number 2, 8 and 9.  
+   ```
+   0100 0000 0010 0011
+   0100 0001 1010 0011 (2 is already ON so no change)
+   ```
+4. After turning OFF lights in room 5 and 9.
+   ```
+   0100 0001 1010 0011
+   0100 0000 1010 0011 (5 is already OFF so no change)
+   ```
+5. After toggling lights in even rooms.
+   ```
+   0100 0000 1010 0011
+   1110 1010 0000 1001
+   ```
+6. The number of bits set in the final represenation in 7.
