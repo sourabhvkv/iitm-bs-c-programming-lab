@@ -15,7 +15,7 @@ Assume room number 1 correspond to the LSB and increases all the way to 16 which
 **Input Format**
 
 Input consists of four lines.
-1. First input consists of number n (as decimal number), whose bits represents the initial lighting configuration.
+1. First line consists of positive integer n (as decimal number), whose bits represents the initial lighting configuration.
 2. Second line of input consists of the number $k$, where every nth room has to be toggled(1<=k<=16)
 3. In the third line consists of the numbers that represent the room number for which the lights has to be turned on and is terminated by -1.
 4. In the fourth line consists of the numbers that represent the room number for which the lights has to be turned off and is terminated by -1.
