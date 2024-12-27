@@ -1,17 +1,18 @@
 #include<stdio.h>
-void toggle(int *lights, int k)
+void toggle_every_kth_room(int *lights, int k)
 {
   //Code here
 }
-void turn_on(int *lights, int k)
+void turn_on_lights(int *lights)
 {
-  //Code here
+  // Read input till -1 and turn on the lights
+  
 }
-void turn_off(int *lights, int k)
+void turn_off_lights(int *lights)
 {
-  //Code here
+  // Read input till -1 and turn on the lights
 }
-void alternate_pattern(int *lights)
+void toggle_even_rooms(int *lights)
 {
     //Code here
 }
@@ -26,7 +27,7 @@ int main()
   scanf("%d",&lights);
   int k;
   scanf("%d",&k);
-  toggle(&lights,k);
+  toggle_every_kth_room(&lights,k);
   if(k==1)
     printf("After toggling every 1st room:%d",lights);
   else if(k==2)
@@ -35,22 +36,13 @@ int main()
       printf("After toggling every 3rd room:%d",lights);
   else
     printf("After toggling every %dth room:%d",k,lights);
-  scanf("%d",&k);
-  while(k!=-1)
-  {
-    turn_on(&lights,k);
-    scanf("%d",&k);
-  }
-  printf("After turning ON lights for maintenance: %d",lights);
-  scanf("%d",&k);
-  while(k!=-1)
-  {
-    turn_off(&lights,k);
-    scanf("%d",&k);
-  }
-  printf("After turning OFF lights to save energy: %d",lights);
-  alternate_pattern(&lights);
-  printf("After applying alternate lighting pattern: %d",lights);
+  
+  turn_on_lights(&lights);
+  printf("After turning ON the given lights: %d",lights);
+  turn_off_lights(&lights,k);
+  printf("After turning OFF the given lights: %d",lights);
+  toggle_even_rooms(&lights);
+  printf("After toggling lights in even rooms: %d",lights);
   int l=count_lights(lights);
   printf("Total number of lights ON = %d",l);
   return 0;
