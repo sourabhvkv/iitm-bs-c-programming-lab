@@ -1,4 +1,4 @@
-## Smart Lighting System Configuration
+5## Smart Lighting System Configuration
 
 You are designing a smart lighting system for a 16-room building. Each room's light can either be ON or OFF. The state of light in each room is represented by the first 16 bits of an integer, $n$. Given the number n, perform the below tasks and print the state of the LED after each step.
 

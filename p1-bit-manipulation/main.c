@@ -1,26 +1,55 @@
 #include<stdio.h>
 void toggle_every_kth_room(int *lights, int k)
 {
-  //Code here
+  for (int i = k - 1; i < 16; i += k)
+  {
+    *lights ^= (1<<i);
+  }
 }
 void turn_on_lights(int *lights)
 {
-  // Read input till -1 and turn on the lights
-  
-}
+int room;
+ while (1) { 
+  scanf("%d", &room); 
+  if (room == -1) 
+  break;  
+  *lights |= (1 << (room - 1));
+}}
 void turn_off_lights(int *lights)
-{
+
   // Read input till -1 and turn on the lights
-}
+   { int room; 
+   while (1) { 
+    scanf("%d", &room); 
+    if (room == -1) 
+    break; 
+    *lights &= ~(1 << (room - 1));
+}}
+
 void toggle_even_rooms(int *lights)
 {
-    //Code here
+     for (int i = 1; i < 16; i += 2) 
+     { 
+      *lights ^= (1 << i);
+     }
 }
-int count_lights(int lights)
-{
-    //Code here
-    return 0;
-}
+
+     // Count the number of lights that are ON 
+     
+     int count_lights(int lights) 
+      { 
+        int count = 0; 
+        for (int i = 0; i < 16; i++)
+            { 
+              if ((lights>>i) & 1 )
+
+        {
+         count++;  
+         } 
+       } 
+       return count; 
+       
+       } 
 
 void printBin(int a){
   for(int i =15; i>=0;i--)
