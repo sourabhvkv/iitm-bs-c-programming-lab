@@ -39,7 +39,7 @@ int main()
   
   turn_on_lights(&lights);
   printf("After turning ON the given lights: %d",lights);
-  turn_off_lights(&lights,k);
+  turn_off_lights(&lights);
   printf("After turning OFF the given lights: %d",lights);
   toggle_even_rooms(&lights);
   printf("After toggling lights in even rooms: %d",lights);
