@@ -21,29 +21,48 @@ int count_lights(int lights)
     //Code here
     return 0;
 }
+
+void printBin(int a){
+  for(int i =15; i>=0;i--)
+    printf("%d", (a>>i) & 1);
+  printf("\n");
+}
+
 int main()
 {
-  long lights;
+  int lights;
   scanf("%d",&lights);
   int k;
   scanf("%d",&k);
   toggle_every_kth_room(&lights,k);
-  if(k==1)
-    printf("After toggling every 1st room:%d",lights);
-  else if(k==2)
-    printf("After toggling every 2nd room:%d",lights);
-  else if(k==3)
-      printf("After toggling every 3rd room:%d",lights);
-  else
-    printf("After toggling every %dth room:%d",k,lights);
+  if(k==1){
+    printf("After toggling every 1st room:");
+    printBin(lights);
+  }
+  else if(k==2){
+    printf("After toggling every 2nd room:");
+    printBin(lights);
+  }
+  else if(k==3){
+    printf("After toggling every 3rd room:");
+    printBin(lights);
+  }
+  else{
+    printf("After toggling every %dth room:",k);
+    printBin(lights);
+  }
   
   turn_on_lights(&lights);
-  printf("After turning ON the given lights: %d",lights);
+  printf("After turning ON the given lights:");
+  printBin(lights);
   turn_off_lights(&lights);
-  printf("After turning OFF the given lights: %d",lights);
+  printf("After turning OFF the given lights:");
+  printBin(lights);
   toggle_even_rooms(&lights);
-  printf("After toggling lights in even rooms: %d",lights);
+  printf("After toggling lights in even rooms:");
+  printBin(lights);
   int l=count_lights(lights);
-  printf("Total number of lights ON = %d",l);
+  printf("Total number of lights ON = %d\n",l);
   return 0;
 }
+
