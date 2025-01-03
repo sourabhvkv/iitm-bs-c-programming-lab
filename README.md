@@ -1,14 +1,48 @@
 # IITM BS - C programming lab
 
-## Instructions
+## Software requirements
+- GNU Build essentials (build tools like gcc, gdb etc.)
+- Python (for data generation)
+- VS Code (Primary IDE)
+- Git (for version control)
+- Github Account and Github CLI (Optional if you want to save your changes your github account.)
 
-- Create a Github account: [Github signup](https://github.com/signup)
-- Fork this repo: [How to Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
-- Setup a Github Codespace: [How to setup a codespace for a repo](https://docs.github.com/en/codespaces/developing-in-a-codespace/creating-a-codespace-for-a-repository#creating-a-codespace-for-a-repository)
-- (Optional) Setup Codespace with local VS code: [Code spaces with visual studio code](https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-in-visual-studio-code)
+## Note For Windows Users
+- For windows the recommended way to follow this lab is using WSL(Windows Subsystem for Linux). 
+  - Installing WSL
+    - Open Powershell in windows.
+    - Run `wsl --install`. This will install a Ubuntu subsystem in windows.
+    - Restart your system after the installation.
+  
 
+## Setup and getting started
+- Install VS code for your platform from [here](https://code.visualstudio.com/download#).
+- Open the VS code.
+- From `File->Open Folder`, create and open a new empty folder.
+- Open Terminal in VS code ( ctrl+shift+` )
+  - For windows users, open the Ubuntu terminal from the dropdown in the top right corner of the terminal called "Launch Profile...".
+  - For Linux/Mac users, use your built-in or prefered shell.
+- Clone either the original project repo or your fork of the repo to the current directory using `git clone` command in the terminal.
+  ```
+  git clone https://github.com/livinNector/iitm-bs-c-programming-lab .
+  ```
+  or
+  ```
+  git clone url_of_your_fork .
+  ```
+- Open Extensions in vscode.
+  - Type `@recommended` in the search bar. It will show the following extensions.
+  - Search and install the folowing extensions.
+    - WSL (For windows users only) - This will enable opening folders in windows with vscode.
+    - C/C++ 
+    - Git Graph
+- Install GNU Build Utils
+    ```
+    sudo apt-get update
+    sudo apt-get install build-essential
+    ```
 
-## Getting used to the VS code interface in CodeSpaces
+## Getting used to the VS code interface
 
 The Github CodeSpaces is like a virtual machine running on the cloud which you can access using a web browser. It is a linux system which is running on the cloud. 
 
@@ -29,7 +63,12 @@ Try the following:
 
 ### Source control
 
-#### The GitHub lingo
+#### Github How-Tos
+
+- Create a Github account: [Github signup](https://github.com/signup)
+- Fork this repo: [How to Fork a repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
+
+#### The Git/GitHub lingo
 - **Git** - A Source code versioning system with a command line tool.
 - **GitHub** - A cloud service for managing source code.
 - **Repo(Repository)** - A folder which has an inbuilt versioning system(simply speaking a folder with a .git subfolder with the version details.).
@@ -39,7 +78,7 @@ Try the following:
 - **CodeSpaces** - A virtual machine with the **Clone** of your repo that you can access online or using visual studio code.
 - **Remote** - The original repo in the GitHub from which you cloned the local copy.
 
-#### Basic Versioning
+#### Basic version control
 
 - Staging - Selecting which changes to save in the local clone.
 - Commiting - Saving the changes in the local clone.
