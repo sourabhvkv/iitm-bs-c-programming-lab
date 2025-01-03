@@ -1,9 +1,9 @@
 #include<stdio.h>
-int n = 0;
-void fact(int n)
+int n = 1;
+void fact(int num)
 {
     int i = 1;
-    for(; i <= n; i++)
+    for(; i <= num; i++)
         n *= i;
 }
 
